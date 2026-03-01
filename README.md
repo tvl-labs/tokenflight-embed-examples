@@ -1,135 +1,100 @@
-# Turborepo starter
+# TokenFlight Swap — Integration Examples
 
-This Turborepo starter is maintained by the Turborepo core team.
+Production-grade examples for integrating the [TokenFlight Swap](https://embed.tokenflight.ai) cross-chain swap widget across different frontend stacks.
 
-## Using this example
+Each example is a **fully standalone project** — copy any directory, install dependencies, and deploy.
 
-Run the following command:
+## Examples
 
-```sh
-npx create-turbo@latest
+| Example | Stack | Wallet | Adapter |
+|---------|-------|--------|---------|
+| [`next-rainbowkit`](./next-rainbowkit) | Next.js 16 + React 19 | RainbowKit | `@tokenflight/adapter-wagmi` |
+| [`react`](./react) | TanStack Start + Vinxi | Reown AppKit | `@tokenflight/adapter-appkit` |
+| [`nuxt-appkit`](./nuxt-appkit) | Nuxt 4 + Vue 3 | Reown AppKit | `@tokenflight/adapter-appkit` |
+| [`vue-ethers`](./vue-ethers) | Vite + Vue 3 | ethers.js v6 (direct) | `@tokenflight/adapter-ethers` |
+| [`astro-native`](./astro-native) | Astro 5 + vanilla JS | Reown AppKit | `@tokenflight/adapter-appkit` |
+
+## How It Works
+
+TokenFlight Swap is a **Web Component** built with Shadow DOM encapsulation. It works with any framework.
+
+Register the web component once, then use it anywhere in your HTML:
+
+```ts
+import { registerElements } from '@tokenflight/swap';
+import { AppKitWalletAdapter } from '@tokenflight/adapter-appkit';
+
+registerElements({
+  walletAdapter: new AppKitWalletAdapter(appkit, { VersionedTransaction }),
+});
 ```
 
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+```html
+<tokenflight-swap theme="dark" locale="en"></tokenflight-swap>
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+### Wallet Adapters
 
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+| Package | Use With |
+|---------|----------|
+| `@tokenflight/adapter-wagmi` | wagmi, RainbowKit, ConnectKit |
+| `@tokenflight/adapter-appkit` | Reown AppKit (WalletConnect) |
+| `@tokenflight/adapter-ethers` | ethers.js v5/v6 direct |
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+## Quick Start
 
-### Develop
+Pick an example and run it:
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
+```bash
+cd next-rainbowkit
+npm install
+npm run dev
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+No API key is required. The widget connects to the Hyperstream API with public rate limiting.
 
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
+## Copy an Example
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
+Each example is self-contained. To use one in your own project:
 
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
+```bash
+cp -r next-rainbowkit my-swap-app
+cd my-swap-app
+npm install
+npm run dev
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## Deploy
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+Every example includes deployment configs for:
+
+- **Vercel** — `vercel.json`
+- **Netlify** — `netlify.toml`
+- **Cloudflare Pages** — `wrangler.toml`
+
+## Environment Variables
+
+All examples support an optional WalletConnect Project ID for wallet connectivity. Get one at [cloud.reown.com](https://cloud.reown.com).
+
+| Framework | Variable |
+|-----------|----------|
+| Next.js | `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` |
+| Nuxt | `NUXT_PUBLIC_WALLETCONNECT_PROJECT_ID` |
+| Vite / TanStack Start | `VITE_WALLETCONNECT_PROJECT_ID` |
+| Astro | `PUBLIC_WALLETCONNECT_PROJECT_ID` |
+
+## Project Structure
 
 ```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
+next-rainbowkit/     # Next.js 16 + RainbowKit
+react/               # TanStack Start + AppKit
+nuxt-appkit/         # Nuxt 4 + AppKit
+vue-ethers/          # Vite + Vue + ethers.js
+astro-native/        # Astro + native JS
 ```
 
-## Useful Links
+No monorepo. No shared packages. No workspace dependencies.
 
-Learn more about the power of Turborepo:
+## License
 
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+MIT

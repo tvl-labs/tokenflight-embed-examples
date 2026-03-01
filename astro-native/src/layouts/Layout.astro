@@ -1,0 +1,69 @@
+---
+import "../styles/global.css";
+import ThemeToggle from "../components/ThemeToggle.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cross-chain token swaps powered by Khalani — Astro + Vanilla JS example" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-[#0a0a0b] text-white font-['Inter',sans-serif] min-h-screen antialiased">
+    <!-- Navigation -->
+    <nav class="nav sticky top-0 z-50 border-b backdrop-blur-xl">
+      <div class="mx-auto flex h-14 max-w-5xl items-center justify-between px-6">
+        <div class="flex items-center gap-3">
+          <span class="nav-title text-[15px] font-semibold tracking-tight">
+            Swap
+          </span>
+          <span class="nav-badge rounded-full border px-2.5 py-0.5 text-[11px] font-medium tracking-wide">
+            Vanilla JS
+          </span>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <select id="locale-select" class="locale-select" aria-label="Language">
+            <option value="en-US">EN</option>
+            <option value="zh-CN">中文</option>
+            <option value="zh-TW">繁體</option>
+            <option value="ja-JP">日本語</option>
+            <option value="ko-KR">한국어</option>
+          </select>
+          <ThemeToggle />
+          <appkit-button />
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="flex flex-1 items-center justify-center px-4 py-12">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center">
+      <p class="text-xs" style="color: var(--text-muted)">
+        Powered by
+        <a
+          href="https://khalani.network"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="transition-colors hover:opacity-80"
+          style="color: var(--text-tertiary)"
+        >
+          Khalani Network
+        </a>
+      </p>
+    </footer>
+  </body>
+</html>

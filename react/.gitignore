@@ -1,0 +1,25 @@
+# TanStack Start / Vinxi build outputs
+.output
+.vinxi
+.nitro
+.cache
+
+# Node
+node_modules
+
+# Logs
+logs
+*.log
+
+# Generated route tree
+app/routeTree.gen.ts
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example

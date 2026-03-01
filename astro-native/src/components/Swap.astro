@@ -1,0 +1,80 @@
+<div class="w-full max-w-120 flex justify-center items-center">
+  <tokenflight-swap theme="dark" id="swap-widget" />
+</div>
+
+<script>
+  import { createAppKit } from "@reown/appkit";
+  import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
+  import { SolanaAdapter } from "@reown/appkit-adapter-solana";
+  import {
+    mainnet,
+    base,
+    arbitrum,
+    optimism,
+    polygon,
+    solana,
+  } from "@reown/appkit/networks";
+  import { VersionedTransaction } from "@solana/web3.js";
+  import { registerElements } from "@tokenflight/swap";
+  import { AppKitWalletAdapter } from "@tokenflight/adapter-appkit";
+  import type { AppKitNetwork } from "@reown/appkit/networks";
+
+  // --- AppKit setup (EVM + Solana) ---
+
+  const projectId =
+    import.meta.env.PUBLIC_WALLETCONNECT_PROJECT_ID ||
+    "PLACEHOLDER_PROJECT_ID";
+
+  const evmChains = [mainnet, base, arbitrum, optimism, polygon] as unknown as AppKitNetwork[];
+  const allNetworks = [mainnet, base, arbitrum, optimism, polygon, solana] as unknown as [AppKitNetwork, ...AppKitNetwork[]];
+
+  const wagmiAdapter = new WagmiAdapter({
+    projectId,
+    networks: evmChains,
+  });
+
+  const solanaAdapter = new SolanaAdapter();
+
+  const appkit = createAppKit({
+    adapters: [wagmiAdapter, solanaAdapter],
+    networks: allNetworks,
+    defaultNetwork: mainnet,
+    projectId,
+    metadata: {
+      name: "Swap",
+      description: "Cross-chain token swaps powered by Khalani",
+      url: window.location.origin,
+      icons: ["https://khalani.network/favicon.ico"],
+    },
+    features: {
+      analytics: false,
+    },
+  });
+
+  // --- Listen for theme changes from ThemeToggle ---
+
+  window.addEventListener("theme-change", (e) => {
+    const theme = (e as CustomEvent<{ theme: string }>).detail.theme;
+    appkit.setThemeMode(theme as "dark" | "light");
+  });
+
+  // --- Register custom elements ---
+
+  const walletAdapter = new AppKitWalletAdapter(appkit, {
+    VersionedTransaction,
+  });
+  registerElements({
+    walletAdapter,
+    customColors: {
+      "--tf-font-family": "'Inter', sans-serif",
+      "--tf-font-family-mono": "'JetBrains Mono', monospace",
+    },
+  });
+
+  // --- Locale selector ---
+
+  document.getElementById("locale-select")!.addEventListener("change", (e) => {
+    const locale = (e.target as HTMLSelectElement).value;
+    document.getElementById("swap-widget")?.setAttribute("locale", locale);
+  });
+</script>

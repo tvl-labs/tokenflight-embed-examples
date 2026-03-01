@@ -1,0 +1,32 @@
+{
+  "name": "nuxt-appkit-tokenflight-swap",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@reown/appkit": "^1.8.18",
+    "@reown/appkit-adapter-solana": "^1.8.18",
+    "@reown/appkit-adapter-wagmi": "^1.8.18",
+    "@solana/web3.js": "^1.98.4",
+    "@tokenflight/adapter-appkit": "0.0.3-rc.1",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@tokenflight/swap": "0.0.3-rc.1",
+    "nuxt": "^4.3.1",
+    "viem": "^2.46.3",
+    "vue": "^3.5.29"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.9.3"
+  }
+}

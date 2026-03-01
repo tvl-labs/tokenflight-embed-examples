@@ -1,0 +1,30 @@
+{
+  "name": "astro-native-tokenflight-swap",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@reown/appkit": "^1.8.18",
+    "@reown/appkit-adapter-solana": "^1.8.18",
+    "@reown/appkit-adapter-wagmi": "^1.8.18",
+    "@solana/web3.js": "^1.98.4",
+    "@tokenflight/adapter-appkit": "0.0.3-rc.1",
+    "@tokenflight/swap": "0.0.3-rc.1",
+    "@wagmi/core": "^2.16.0",
+    "astro": "^5.18.0",
+    "viem": "^2.46.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.9.3"
+  }
+}
