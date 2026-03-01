@@ -27,11 +27,11 @@ importers:
         specifier: ^1.98.4
         version: 1.98.4(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)
       '@tokenflight/adapter-appkit':
-        specifier: 0.0.3-rc.1
-        version: 0.0.3-rc.1(@reown/appkit@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(db0@0.3.4)(fastestsmallesttextencoderdecoder@1.0.22)(ioredis@5.10.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@3.25.76))
+        specifier: 0.0.3
+        version: 0.0.3(@reown/appkit@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(db0@0.3.4)(fastestsmallesttextencoderdecoder@1.0.22)(ioredis@5.10.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@3.25.76))
       '@tokenflight/swap':
-        specifier: 0.0.3-rc.1
-        version: 0.0.3-rc.1
+        specifier: 0.0.3
+        version: 0.0.3
       nuxt:
         specifier: ^4.3.1
         version: 4.3.1(@parcel/watcher@2.5.6)(@types/node@25.3.2)(@vue/compiler-sfc@3.5.29)(bufferutil@4.1.0)(cac@6.7.14)(db0@0.3.4)(idb-keyval@6.2.2)(ioredis@5.10.0)(lightningcss@1.31.1)(magicast@0.5.2)(rollup@4.59.0)(terser@5.46.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(vite@7.3.1(@types/node@25.3.2)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.46.0)(yaml@2.8.2))(yaml@2.8.2)
@@ -1857,16 +1857,16 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@tokenflight/adapter-appkit@0.0.3-rc.1':
-    resolution: {integrity: sha512-3Q6o66O7yxBIV+EOpHrr1NwaMpkVQOfFDfmkAKKD6ESCvKsZhV+e+BGrH+O9szhdMREreen9jDopQbaQmSiCRA==}
+  '@tokenflight/adapter-appkit@0.0.3':
+    resolution: {integrity: sha512-H3R/j6V4RpLs8XexgpIFlXNK4TV+jIRrNMCfLmyoXbub2lO1CXQCpnVCajZzri47VODIoPdbAyDKd/KfOBQvxQ==}
     peerDependencies:
       '@reown/appkit': '>=1.8.0'
     peerDependenciesMeta:
       '@reown/appkit':
         optional: true
 
-  '@tokenflight/swap@0.0.3-rc.1':
-    resolution: {integrity: sha512-3/TuR5Mx7oC386FYuMRFXCTVIHv8nVf/Cj91drnWN2VIKLvBcMJwbp3gjq2CFN1DlCjzfHKH3nfVuHWV0Dqf+Q==}
+  '@tokenflight/swap@0.0.3':
+    resolution: {integrity: sha512-8/BRvndwZXrGkTr9Q8L/gJMgkeJtyBW6d/wnizRe5nLAdP6Hf1bdiu0J/L9pMnz1VpzFVfUTm1lBlE9Fs2SmZw==}
 
   '@tybys/wasm-util@0.10.1':
     resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
@@ -7071,13 +7071,13 @@ snapshots:
       '@tanstack/query-core': 5.90.20
       react: 19.2.4
 
-  '@tokenflight/adapter-appkit@0.0.3-rc.1(@reown/appkit@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(db0@0.3.4)(fastestsmallesttextencoderdecoder@1.0.22)(ioredis@5.10.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@3.25.76))':
+  '@tokenflight/adapter-appkit@0.0.3(@reown/appkit@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(db0@0.3.4)(fastestsmallesttextencoderdecoder@1.0.22)(ioredis@5.10.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@3.25.76))':
     dependencies:
-      '@tokenflight/swap': 0.0.3-rc.1
+      '@tokenflight/swap': 0.0.3
     optionalDependencies:
       '@reown/appkit': 1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(db0@0.3.4)(fastestsmallesttextencoderdecoder@1.0.22)(ioredis@5.10.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@3.25.76)
 
-  '@tokenflight/swap@0.0.3-rc.1': {}
+  '@tokenflight/swap@0.0.3': {}
 
   '@tybys/wasm-util@0.10.1':
     dependencies:

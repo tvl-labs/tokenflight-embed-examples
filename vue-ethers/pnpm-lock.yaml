@@ -15,11 +15,11 @@ importers:
         specifier: ^5.2.8
         version: 5.2.8
       '@tokenflight/adapter-ethers':
-        specifier: 0.0.3-rc.1
-        version: 0.0.3-rc.1(ethers@6.16.0)
+        specifier: 0.0.3
+        version: 0.0.3(ethers@6.16.0)
       '@tokenflight/swap':
-        specifier: 0.0.3-rc.1
-        version: 0.0.3-rc.1
+        specifier: 0.0.3
+        version: 0.0.3
       ethers:
         specifier: ^6.16.0
         version: 6.16.0
@@ -471,16 +471,16 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7
 
-  '@tokenflight/adapter-ethers@0.0.3-rc.1':
-    resolution: {integrity: sha512-nPY0zMW2GbcH5UKXKGUVwK8rwgUCKCy0AJk2DwAl0wsrjzj9Vn59ee1P86wcHfCjUe4G0y2+TYQgtnNaF8WEag==}
+  '@tokenflight/adapter-ethers@0.0.3':
+    resolution: {integrity: sha512-4+O7Evc3SAHI0Z5BZokf5bqVabnbNcOpN+/xL6HHzPoTN5iYbQ83TcUNm6uPieOiER8aOwwvGCwV9Ffu9CfYGg==}
     peerDependencies:
       ethers: '>=6.0.0'
     peerDependenciesMeta:
       ethers:
         optional: true
 
-  '@tokenflight/swap@0.0.3-rc.1':
-    resolution: {integrity: sha512-3/TuR5Mx7oC386FYuMRFXCTVIHv8nVf/Cj91drnWN2VIKLvBcMJwbp3gjq2CFN1DlCjzfHKH3nfVuHWV0Dqf+Q==}
+  '@tokenflight/swap@0.0.3':
+    resolution: {integrity: sha512-8/BRvndwZXrGkTr9Q8L/gJMgkeJtyBW6d/wnizRe5nLAdP6Hf1bdiu0J/L9pMnz1VpzFVfUTm1lBlE9Fs2SmZw==}
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
@@ -1054,13 +1054,13 @@ snapshots:
       tailwindcss: 4.2.1
       vite: 7.3.1(jiti@2.6.1)(lightningcss@1.31.1)
 
-  '@tokenflight/adapter-ethers@0.0.3-rc.1(ethers@6.16.0)':
+  '@tokenflight/adapter-ethers@0.0.3(ethers@6.16.0)':
     dependencies:
-      '@tokenflight/swap': 0.0.3-rc.1
+      '@tokenflight/swap': 0.0.3
     optionalDependencies:
       ethers: 6.16.0
 
-  '@tokenflight/swap@0.0.3-rc.1': {}
+  '@tokenflight/swap@0.0.3': {}
 
   '@types/estree@1.0.8': {}
 

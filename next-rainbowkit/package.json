@@ -11,8 +11,8 @@
   "dependencies": {
     "@rainbow-me/rainbowkit": "^2.2.10",
     "@tanstack/react-query": "^5.90.21",
-    "@tokenflight/adapter-wagmi": "0.0.3-rc.1",
-    "@tokenflight/swap": "0.0.3-rc.1",
+    "@tokenflight/adapter-wagmi": "0.0.3",
+    "@tokenflight/swap": "0.0.3",
     "@wagmi/core": "^3.4.0",
     "next": "^16.1.6",
     "react": "^19.2.4",

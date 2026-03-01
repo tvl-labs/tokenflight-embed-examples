@@ -15,11 +15,11 @@ importers:
         specifier: ^5.90.21
         version: 5.90.21(react@19.2.4)
       '@tokenflight/adapter-wagmi':
-        specifier: 0.0.3-rc.1
-        version: 0.0.3-rc.1(@wagmi/core@3.4.0(@tanstack/query-core@5.90.20)(@types/react@19.2.14)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(viem@2.46.3(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)))
+        specifier: 0.0.3
+        version: 0.0.3(@wagmi/core@3.4.0(@tanstack/query-core@5.90.20)(@types/react@19.2.14)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(viem@2.46.3(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)))
       '@tokenflight/swap':
-        specifier: 0.0.3-rc.1
-        version: 0.0.3-rc.1
+        specifier: 0.0.3
+        version: 0.0.3
       '@wagmi/core':
         specifier: ^3.4.0
         version: 3.4.0(@tanstack/query-core@5.90.20)(@types/react@19.2.14)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(viem@2.46.3(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))
@@ -591,16 +591,16 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@tokenflight/adapter-wagmi@0.0.3-rc.1':
-    resolution: {integrity: sha512-qM6CcsVfy2iBFYFcy+5qRTYAtifPs9uHQslWvL7X7M8aBMLDg1yov8HIsDYDm+VYst0E2Zn8Go8gp4yIdFPw8Q==}
+  '@tokenflight/adapter-wagmi@0.0.3':
+    resolution: {integrity: sha512-m7EfzqWI5m96r86CrSYjSYXBBkAm9J2bDcwRdb/g+fpq9nks2aMykEIhsS+1pXVbZ6ErJHGr2UtAvK7Gda+LSA==}
     peerDependencies:
       '@wagmi/core': '>=3.0.0'
     peerDependenciesMeta:
       '@wagmi/core':
         optional: true
 
-  '@tokenflight/swap@0.0.3-rc.1':
-    resolution: {integrity: sha512-3/TuR5Mx7oC386FYuMRFXCTVIHv8nVf/Cj91drnWN2VIKLvBcMJwbp3gjq2CFN1DlCjzfHKH3nfVuHWV0Dqf+Q==}
+  '@tokenflight/swap@0.0.3':
+    resolution: {integrity: sha512-8/BRvndwZXrGkTr9Q8L/gJMgkeJtyBW6d/wnizRe5nLAdP6Hf1bdiu0J/L9pMnz1VpzFVfUTm1lBlE9Fs2SmZw==}
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
@@ -2868,13 +2868,13 @@ snapshots:
       '@tanstack/query-core': 5.90.20
       react: 19.2.4
 
-  '@tokenflight/adapter-wagmi@0.0.3-rc.1(@wagmi/core@3.4.0(@tanstack/query-core@5.90.20)(@types/react@19.2.14)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(viem@2.46.3(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)))':
+  '@tokenflight/adapter-wagmi@0.0.3(@wagmi/core@3.4.0(@tanstack/query-core@5.90.20)(@types/react@19.2.14)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(viem@2.46.3(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)))':
     dependencies:
-      '@tokenflight/swap': 0.0.3-rc.1
+      '@tokenflight/swap': 0.0.3
     optionalDependencies:
       '@wagmi/core': 3.4.0(@tanstack/query-core@5.90.20)(@types/react@19.2.14)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(viem@2.46.3(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))
 
-  '@tokenflight/swap@0.0.3-rc.1': {}
+  '@tokenflight/swap@0.0.3': {}
 
   '@types/debug@4.1.12':
     dependencies:
