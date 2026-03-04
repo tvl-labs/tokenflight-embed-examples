@@ -47,7 +47,7 @@ This is the file to look at to understand how to integrate TokenFlight Receive i
 This example uses `registerElements()` to register the `<tokenflight-receive>` web component:
 
 ```ts
-import { registerElements } from '@tokenflight/embed';
+import { registerElements } from '@tokenflight/swap';
 import { AppKitWalletAdapter } from '@tokenflight/adapter-appkit';
 
 const walletAdapter = new AppKitWalletAdapter(appkit, {

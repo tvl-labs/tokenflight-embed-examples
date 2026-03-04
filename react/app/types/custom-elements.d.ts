@@ -1,4 +1,4 @@
-import "@tokenflight/embed/custom-elements";
+import "@tokenflight/swap/custom-elements";
 import type { CSSProperties } from "react";
 
 declare module "react/jsx-runtime" {

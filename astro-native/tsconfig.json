@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "types": ["@tokenflight/embed/custom-elements"],
+    "types": ["@tokenflight/swap/custom-elements"],
     "noUncheckedIndexedAccess": true,
     "baseUrl": ".",
     "paths": {

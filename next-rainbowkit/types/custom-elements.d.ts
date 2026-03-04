@@ -1,1 +1,1 @@
-import "@tokenflight/embed/custom-elements";
+import "@tokenflight/swap/custom-elements";

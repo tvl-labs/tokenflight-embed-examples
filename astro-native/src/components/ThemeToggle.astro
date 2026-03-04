@@ -13,14 +13,14 @@
 
 <script>
   const toggle = document.getElementById("theme-toggle")!;
-  const swapWidget = document.getElementById("receive-widget");
+  const receiveWidget = document.getElementById("receive-widget");
 
   toggle.addEventListener("click", () => {
     const isDark = document.documentElement.dataset.theme !== "light";
     const theme = isDark ? "light" : "dark";
 
     document.documentElement.dataset.theme = theme;
-    swapWidget?.setAttribute("theme", theme);
+    receiveWidget?.setAttribute("theme", theme);
 
     // Dispatch event for AppKit + receive widget to pick up theme change
     window.dispatchEvent(new CustomEvent('theme-change', { detail: { theme } }));

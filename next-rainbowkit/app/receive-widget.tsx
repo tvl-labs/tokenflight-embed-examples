@@ -15,7 +15,7 @@ export function ReceiveWidget() {
     if (registeredRef.current) return;
 
     Promise.all([
-      import("@tokenflight/embed"),
+      import("@tokenflight/swap"),
       import("@tokenflight/adapter-wagmi"),
     ]).then(([{ registerElements }, { WagmiWalletAdapter }]) => {
       if (registeredRef.current) return;

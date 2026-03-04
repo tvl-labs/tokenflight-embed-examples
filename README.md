@@ -21,7 +21,7 @@ TokenFlight Receive is a **Web Component** built with Shadow DOM encapsulation. 
 Register the web component once, then use it anywhere in your HTML:
 
 ```ts
-import { registerElements } from '@tokenflight/embed';
+import { registerElements } from '@tokenflight/swap';
 import { AppKitWalletAdapter } from '@tokenflight/adapter-appkit';
 
 registerElements({

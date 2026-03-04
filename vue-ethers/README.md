@@ -29,7 +29,7 @@ Start here if you want to integrate TokenFlight Receive into your own Vue app.
 
 - **Vue 3.5+** - Composition API with `<script setup>`
 - **ethers.js v6** - Wallet connection via `BrowserProvider`
-- **@tokenflight/embed** - Intent-based trading widget (Web Components)
+- **@tokenflight/swap** - Intent-based trading widget (Web Components)
 - **@tokenflight/adapter-ethers** - ethers.js wallet adapter for TokenFlight
 - **Vite 7** - Build tool
 - **TailwindCSS v4** - Utility-first CSS
@@ -58,7 +58,7 @@ src/
 ## How It Works
 
 1. **Wallet Detection** - Checks for `window.ethereum` (injected by MetaMask or similar)
-2. **Element Registration** - Dynamically imports `@tokenflight/embed` and `@tokenflight/adapter-ethers`, then calls `registerElements()` with an `EthersWalletAdapter` to define the `<tokenflight-receive>` custom element
+2. **Element Registration** - Dynamically imports `@tokenflight/swap` and `@tokenflight/adapter-ethers`, then calls `registerElements()` with an `EthersWalletAdapter` to define the `<tokenflight-receive>` custom element
 3. **Rendering** - Places `<tokenflight-receive>` in the template as a standard HTML element with `theme` and `locale` attributes
 4. **Live Updates** - Listens for `theme-change` and `locale-change` custom events and forwards them to the widget via attribute changes
 

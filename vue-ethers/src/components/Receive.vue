@@ -54,7 +54,7 @@ onMounted(async () => {
   try {
     // Dynamically import TokenFlight packages
     const [{ registerElements }, { EthersWalletAdapter }] = await Promise.all([
-      import('@tokenflight/embed'),
+      import('@tokenflight/swap'),
       import('@tokenflight/adapter-ethers'),
     ]);
 

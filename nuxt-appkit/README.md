@@ -31,7 +31,7 @@ Start here to understand how TokenFlight Receive is wired up:
 | Package | Purpose |
 | --- | --- |
 | `nuxt` v4 | Vue meta-framework (SSR/SPA) |
-| `@tokenflight/embed` | Intent-based trading widget |
+| `@tokenflight/swap` | Intent-based trading widget |
 | `@tokenflight/adapter-appkit` | AppKit wallet adapter for TokenFlight |
 | `@reown/appkit` | Wallet connection modal (WalletConnect v2) |
 | `@reown/appkit-adapter-wagmi` | Wagmi integration for AppKit |

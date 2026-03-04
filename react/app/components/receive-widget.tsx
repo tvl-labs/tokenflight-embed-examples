@@ -9,7 +9,7 @@ export function ReceiveWidget() {
     if (registeredRef.current) return;
 
     Promise.all([
-      import('@tokenflight/embed'),
+      import('@tokenflight/swap'),
       import('@tokenflight/adapter-appkit'),
       import('@solana/web3.js'),
       import('~/lib/wagmi'),

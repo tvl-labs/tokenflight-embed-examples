@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 
-import "@tokenflight/embed/custom-elements";
+import "@tokenflight/swap/custom-elements";
 
 declare global {
   interface Window {

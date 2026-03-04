@@ -4,7 +4,7 @@ import { SolanaAdapter } from '@reown/appkit-adapter-solana';
 import { mainnet, base, arbitrum, optimism, polygon, solana } from '@reown/appkit/networks';
 import type { AppKitNetwork } from '@reown/appkit/networks';
 import { VersionedTransaction } from '@solana/web3.js';
-import { registerElements } from '@tokenflight/embed';
+import { registerElements } from '@tokenflight/swap';
 import { AppKitWalletAdapter } from '@tokenflight/adapter-appkit';
 
 export default defineNuxtPlugin(() => {

@@ -19,7 +19,7 @@ The receive widget integration lives in a single self-contained component:
 
 [app/components/receive-widget.tsx](app/components/receive-widget.tsx)
 
-This file handles dynamic import of `@tokenflight/embed`, wallet adapter setup via `@tokenflight/adapter-appkit`, and rendering the `<tokenflight-receive>` web component. Start here to understand how TokenFlight is wired into the app.
+This file handles dynamic import of `@tokenflight/swap`, wallet adapter setup via `@tokenflight/adapter-appkit`, and rendering the `<tokenflight-receive>` web component. Start here to understand how TokenFlight is wired into the app.
 
 ## Tech Stack
 
