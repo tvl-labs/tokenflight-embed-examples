@@ -20,7 +20,7 @@ function toggle() {
 
   document.documentElement.dataset.theme = theme;
 
-  // Dispatch event for Swap component and AppKit to pick up the theme change
+  // Dispatch event for Receive component and AppKit to pick up the theme change
   window.dispatchEvent(new CustomEvent('theme-change', { detail: { theme } }));
 }
 </script>

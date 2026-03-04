@@ -4,7 +4,7 @@ import { SolanaAdapter } from '@reown/appkit-adapter-solana';
 import { mainnet, base, arbitrum, optimism, polygon, solana } from '@reown/appkit/networks';
 import type { AppKitNetwork } from '@reown/appkit/networks';
 import { VersionedTransaction } from '@solana/web3.js';
-import { registerElements } from '@tokenflight/swap';
+import { registerElements } from '@tokenflight/embed';
 import { AppKitWalletAdapter } from '@tokenflight/adapter-appkit';
 
 export default defineNuxtPlugin(() => {
@@ -27,8 +27,8 @@ export default defineNuxtPlugin(() => {
     defaultNetwork: mainnet,
     projectId,
     metadata: {
-      name: 'TokenFlight Swap',
-      description: 'Cross-chain token swaps powered by TokenFlight',
+      name: 'TokenFlight Receive',
+      description: 'Intent-based trading powered by TokenFlight',
       url: window.location.origin,
       icons: ['https://tokenflight.xyz/favicon.ico'],
     },

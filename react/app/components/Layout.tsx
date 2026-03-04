@@ -12,7 +12,7 @@ export function Layout({ children }: Readonly<{ children: ReactNode }>) {
         <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6">
           <div className="flex items-center gap-3">
             <span className="nav-title text-[15px] font-semibold tracking-tight">
-              Swap
+              Receive
             </span>
             <span className="nav-badge rounded-full border px-2.5 py-0.5 text-[11px] font-medium tracking-wide">
               TanStack Start

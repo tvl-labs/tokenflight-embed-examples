@@ -4,7 +4,7 @@ import { useCallback } from "react";
 
 export function LocaleSelect() {
   const onChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
-    document.getElementById("swap-widget")?.setAttribute("locale", e.target.value);
+    document.getElementById("receive-widget")?.setAttribute("locale", e.target.value);
   }, []);
 
   return (

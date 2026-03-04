@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import Layout from '@/components/Layout.vue';
-import Swap from '@/components/Swap.vue';
+import Receive from '@/components/Receive.vue';
 </script>
 
 <template>
   <Layout>
-    <Swap />
+    <Receive />
   </Layout>
 </template>

@@ -1,7 +1,7 @@
 <!--
-  Core Integration: Swap Widget Component
+  Core Integration: Receive Widget Component
   ========================================
-  Renders the <tokenflight-swap> web component and keeps its attributes
+  Renders the <tokenflight-receive> web component and keeps its attributes
   in sync with the rest of the UI via custom events:
     - "theme-change"  (dispatched by ThemeToggle)
     - "locale-change" (dispatched by LocaleSelect)
@@ -22,7 +22,7 @@ const SUPPORTED_LOCALES = new Set([
   'ko-KR',
 ]);
 
-const getSwapEl = (): HTMLElement | null => document.getElementById('swap-widget');
+const getReceiveEl = (): HTMLElement | null => document.getElementById('receive-widget');
 
 const getInitialTheme = (): string =>
   document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
@@ -31,14 +31,14 @@ const handleThemeChange = (e: Event) => {
   if (!(e instanceof CustomEvent) || typeof e.detail?.theme !== 'string') return;
   const { theme } = e.detail;
   if (!VALID_THEMES.has(theme)) return;
-  getSwapEl()?.setAttribute('theme', theme);
+  getReceiveEl()?.setAttribute('theme', theme);
 };
 
 const handleLocaleChange = (e: Event) => {
   if (!(e instanceof CustomEvent) || typeof e.detail?.locale !== 'string') return;
   const { locale } = e.detail;
   if (!SUPPORTED_LOCALES.has(locale)) return;
-  getSwapEl()?.setAttribute('locale', locale);
+  getReceiveEl()?.setAttribute('locale', locale);
 };
 
 onMounted(() => {
@@ -53,8 +53,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <tokenflight-swap
-    id="swap-widget"
+  <tokenflight-receive
+    id="receive-widget"
     :theme="getInitialTheme()"
     style="display: block; width: 100%"
   />

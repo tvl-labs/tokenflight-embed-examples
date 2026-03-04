@@ -13,14 +13,14 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'TokenFlight Swap \u00b7 Nuxt + AppKit',
+      title: 'TokenFlight Receive \u00b7 Nuxt + AppKit',
       htmlAttrs: { lang: 'en' },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
-          content: 'Cross-chain token swaps powered by TokenFlight, Nuxt 3, and Reown AppKit.',
+          content: 'Intent-based trading powered by TokenFlight, Nuxt 4, and Reown AppKit.',
         },
       ],
       link: [],

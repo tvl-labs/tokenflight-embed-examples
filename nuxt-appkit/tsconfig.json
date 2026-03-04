@@ -1,7 +1,7 @@
 {
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "types": ["@tokenflight/swap/custom-elements"],
+    "types": ["@tokenflight/embed/custom-elements"],
     "strict": true,
     "noUncheckedIndexedAccess": true
   }

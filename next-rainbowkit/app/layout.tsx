@@ -18,9 +18,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "TokenFlight Swap · Next.js + RainbowKit",
+  title: "TokenFlight Receive · Next.js + RainbowKit",
   description:
-    "Cross-chain token swap widget powered by TokenFlight, built with Next.js 15, RainbowKit, and wagmi.",
+    "Intent-based trading widget powered by TokenFlight, built with Next.js 16, RainbowKit, and wagmi.",
 };
 
 export default function RootLayout({

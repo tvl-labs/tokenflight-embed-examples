@@ -2,14 +2,14 @@
 
 import { useEffect, useRef } from 'react';
 
-export function SwapWidget() {
+export function ReceiveWidget() {
   const registeredRef = useRef(false);
 
   useEffect(() => {
     if (registeredRef.current) return;
 
     Promise.all([
-      import('@tokenflight/swap'),
+      import('@tokenflight/embed'),
       import('@tokenflight/adapter-appkit'),
       import('@solana/web3.js'),
       import('~/lib/wagmi'),
@@ -30,8 +30,8 @@ export function SwapWidget() {
   }, []);
 
   return (
-    <tokenflight-swap
-      id="swap-widget"
+    <tokenflight-receive
+      id="receive-widget"
       theme="dark"
       style={{ display: 'block', minHeight: 560, width: '100%' }}
     />

@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-appkit-tokenflight-swap",
+  "name": "nuxt-appkit-tokenflight-receive",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -19,7 +19,7 @@
     "@tokenflight/adapter-appkit": "0.0.3",
     "@fontsource/inter": "^5.2.8",
     "@fontsource/jetbrains-mono": "^5.2.8",
-    "@tokenflight/swap": "0.0.3",
+    "@tokenflight/embed": "0.0.3",
     "nuxt": "^4.3.1",
     "viem": "^2.46.3",
     "vue": "^3.5.29"

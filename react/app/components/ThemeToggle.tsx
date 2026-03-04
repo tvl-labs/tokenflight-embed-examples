@@ -8,7 +8,7 @@ export function ThemeToggle() {
     const theme = isDark ? "light" : "dark";
 
     document.documentElement.dataset.theme = theme;
-    document.getElementById("swap-widget")?.setAttribute("theme", theme);
+    document.getElementById("receive-widget")?.setAttribute("theme", theme);
 
     // Dispatch event for AppKit to pick up theme change
     window.dispatchEvent(new CustomEvent('theme-change', { detail: { theme } }));

@@ -1,10 +1,10 @@
 import { Layout } from "./components/Layout";
-import { SwapWidget } from "./swap-widget";
+import { ReceiveWidget } from "./receive-widget";
 
 export default function Home() {
   return (
     <Layout>
-      <SwapWidget />
+      <ReceiveWidget />
     </Layout>
   );
 }

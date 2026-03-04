@@ -20,7 +20,7 @@ function toggle() {
 
   document.documentElement.dataset.theme = theme;
 
-  // Dispatch event for SwapCard to pick up theme change
+  // Dispatch event for Receive component to pick up theme change
   window.dispatchEvent(new CustomEvent('theme-change', { detail: { theme } }));
 }
 </script>

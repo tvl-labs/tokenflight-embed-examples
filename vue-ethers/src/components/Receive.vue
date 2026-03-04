@@ -1,11 +1,11 @@
 <script setup lang="ts">
 /**
- * Swap.vue — Core TokenFlight Swap integration
+ * Receive.vue — Core TokenFlight Receive integration
  *
- * This component is the single reference for integrating TokenFlight Swap
+ * This component is the single reference for integrating TokenFlight Receive
  * with Vue 3 + ethers.js. It handles:
  *
- *  1. Registering the <tokenflight-swap> web component via `registerElements()`
+ *  1. Registering the <tokenflight-receive> web component via `registerElements()`
  *  2. Creating an `EthersWalletAdapter` from `window.ethereum`
  *  3. Listening for theme/locale changes and forwarding them to the widget
  *
@@ -20,7 +20,7 @@ const VALID_THEMES = new Set(['dark', 'light']);
 
 /* ── Helpers ── */
 
-const getSwapEl = (): HTMLElement | null => document.getElementById('swap-widget');
+const getReceiveEl = (): HTMLElement | null => document.getElementById('receive-widget');
 
 const getInitialTheme = (): string =>
   document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
@@ -31,14 +31,14 @@ const handleThemeChange = (e: Event) => {
   if (!(e instanceof CustomEvent) || typeof e.detail?.theme !== 'string') return;
   const { theme } = e.detail;
   if (!VALID_THEMES.has(theme)) return;
-  getSwapEl()?.setAttribute('theme', theme);
+  getReceiveEl()?.setAttribute('theme', theme);
 };
 
 const handleLocaleChange = (e: Event) => {
   if (!(e instanceof CustomEvent) || typeof e.detail?.locale !== 'string') return;
   const { locale } = e.detail;
   if (!SUPPORTED_LOCALES.some((l) => l.value === locale)) return;
-  getSwapEl()?.setAttribute('locale', locale);
+  getReceiveEl()?.setAttribute('locale', locale);
 };
 
 /* ── Lifecycle ── */
@@ -54,11 +54,11 @@ onMounted(async () => {
   try {
     // Dynamically import TokenFlight packages
     const [{ registerElements }, { EthersWalletAdapter }] = await Promise.all([
-      import('@tokenflight/swap'),
+      import('@tokenflight/embed'),
       import('@tokenflight/adapter-ethers'),
     ]);
 
-    // Register the <tokenflight-swap> custom element with ethers adapter
+    // Register the <tokenflight-receive> custom element with ethers adapter
     registerElements({
       walletAdapter: new EthersWalletAdapter(window.ethereum),
       customColors: {
@@ -67,7 +67,7 @@ onMounted(async () => {
       },
     });
   } catch (err: unknown) {
-    console.error('Failed to initialize swap widget:', err);
+    console.error('Failed to initialize receive widget:', err);
   }
 });
 
@@ -79,8 +79,8 @@ onUnmounted(() => {
 
 <template>
   <div class="w-full max-w-120 flex justify-center items-center">
-    <tokenflight-swap
-      id="swap-widget"
+    <tokenflight-receive
+      id="receive-widget"
       :theme="getInitialTheme()"
       style="display: block; width: 100%"
     />

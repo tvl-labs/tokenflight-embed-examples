@@ -30,8 +30,8 @@ export const appkit = createAppKit({
   defaultNetwork: mainnet,
   projectId,
   metadata: {
-    name: 'TokenFlight Swap',
-    description: 'Cross-chain token swap powered by TokenFlight',
+    name: 'TokenFlight Receive',
+    description: 'Intent-based trading powered by TokenFlight',
     url: typeof window !== 'undefined' ? window.location.origin : 'https://tokenflight.xyz',
     icons: ['https://tokenflight.xyz/favicon.ico'],
   },

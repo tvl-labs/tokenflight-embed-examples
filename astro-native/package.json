@@ -1,5 +1,5 @@
 {
-  "name": "astro-native-tokenflight-swap",
+  "name": "astro-native-tokenflight-receive",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -17,7 +17,7 @@
     "@reown/appkit-adapter-wagmi": "^1.8.18",
     "@solana/web3.js": "^1.98.4",
     "@tokenflight/adapter-appkit": "0.0.3",
-    "@tokenflight/swap": "0.0.3",
+    "@tokenflight/embed": "0.0.3",
     "@wagmi/core": "^2.16.0",
     "astro": "^5.18.0",
     "viem": "^2.46.3"

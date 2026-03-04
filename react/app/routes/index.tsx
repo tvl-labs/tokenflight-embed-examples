@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Layout } from '../components/Layout';
-import { SwapWidget } from '../components/swap-widget';
+import { ReceiveWidget } from '../components/receive-widget';
 
 export const Route = createFileRoute('/')({
   component: HomePage,
@@ -9,7 +9,7 @@ export const Route = createFileRoute('/')({
 function HomePage() {
   return (
     <Layout>
-      <SwapWidget />
+      <ReceiveWidget />
     </Layout>
   );
 }

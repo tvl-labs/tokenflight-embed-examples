@@ -1,7 +1,7 @@
 {
   "name": "tokenflight-embed-examples",
   "private": true,
-  "description": "Production-grade examples for integrating TokenFlight Swap across different frontend stacks",
+  "description": "Production-grade examples for integrating TokenFlight Receive across different frontend stacks",
   "engines": {
     "node": ">=18"
   }

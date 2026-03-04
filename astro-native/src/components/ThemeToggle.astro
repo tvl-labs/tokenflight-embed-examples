@@ -13,7 +13,7 @@
 
 <script>
   const toggle = document.getElementById("theme-toggle")!;
-  const swapWidget = document.getElementById("swap-widget");
+  const swapWidget = document.getElementById("receive-widget");
 
   toggle.addEventListener("click", () => {
     const isDark = document.documentElement.dataset.theme !== "light";
@@ -22,7 +22,7 @@
     document.documentElement.dataset.theme = theme;
     swapWidget?.setAttribute("theme", theme);
 
-    // Dispatch event for AppKit + swap widget to pick up theme change
+    // Dispatch event for AppKit + receive widget to pick up theme change
     window.dispatchEvent(new CustomEvent('theme-change', { detail: { theme } }));
   });
 </script>

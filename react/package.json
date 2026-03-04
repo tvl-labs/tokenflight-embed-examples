@@ -1,5 +1,5 @@
 {
-  "name": "react-tokenflight-swap",
+  "name": "react-tokenflight-receive",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -19,7 +19,7 @@
     "@fontsource/inter": "^5.2.8",
     "@fontsource/jetbrains-mono": "^5.2.8",
     "@tokenflight/adapter-appkit": "0.0.3",
-    "@tokenflight/swap": "0.0.3",
+    "@tokenflight/embed": "0.0.3",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "viem": "^2.46.3",

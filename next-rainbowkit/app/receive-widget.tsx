@@ -5,7 +5,7 @@ import { useConfig } from "wagmi";
 import { useTheme } from "./context/theme";
 import { useLocale } from "./context/locale";
 
-export function SwapWidget() {
+export function ReceiveWidget() {
   const config = useConfig();
   const { theme } = useTheme();
   const { locale } = useLocale();
@@ -15,7 +15,7 @@ export function SwapWidget() {
     if (registeredRef.current) return;
 
     Promise.all([
-      import("@tokenflight/swap"),
+      import("@tokenflight/embed"),
       import("@tokenflight/adapter-wagmi"),
     ]).then(([{ registerElements }, { WagmiWalletAdapter }]) => {
       if (registeredRef.current) return;
@@ -32,7 +32,7 @@ export function SwapWidget() {
   }, [config]);
 
   return (
-    <tokenflight-swap
+    <tokenflight-receive
       theme={theme}
       locale={locale}
       style={{ display: "block", minHeight: 560, width: "100%" }}

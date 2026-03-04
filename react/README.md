@@ -1,6 +1,6 @@
-# TokenFlight Swap - TanStack Start + AppKit
+# TokenFlight Receive - TanStack Start + AppKit
 
-Cross-chain token swap widget powered by TokenFlight, built with TanStack Start, Reown AppKit, and wagmi.
+Intent-based trading widget powered by TokenFlight, built with TanStack Start, Reown AppKit, and wagmi.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/tvl-labs/tokenflight-embed-examples/tree/main/react)
 
@@ -15,17 +15,17 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Core Integration
 
-The swap widget integration lives in a single self-contained component:
+The receive widget integration lives in a single self-contained component:
 
-[app/components/swap-widget.tsx](app/components/swap-widget.tsx)
+[app/components/receive-widget.tsx](app/components/receive-widget.tsx)
 
-This file handles dynamic import of `@tokenflight/swap`, wallet adapter setup via `@tokenflight/adapter-appkit`, and rendering the `<tokenflight-swap>` web component. Start here to understand how TokenFlight is wired into the app.
+This file handles dynamic import of `@tokenflight/embed`, wallet adapter setup via `@tokenflight/adapter-appkit`, and rendering the `<tokenflight-receive>` web component. Start here to understand how TokenFlight is wired into the app.
 
 ## Tech Stack
 
 - [TanStack Start](https://tanstack.com/start) (full-stack React framework powered by Vinxi)
 - [Reown AppKit](https://reown.com/appkit) + [wagmi v2](https://wagmi.sh/) + [viem](https://viem.sh/)
-- [TokenFlight Swap](https://tokenflight.xyz/) + AppKit adapter
+- [TokenFlight Receive](https://tokenflight.xyz/) + AppKit adapter
 - [TailwindCSS v4](https://tailwindcss.com/)
 - [TypeScript](https://www.typescriptlang.org/) (strict mode)
 
@@ -50,13 +50,13 @@ app/
   router.tsx          # TanStack Router setup
   routes/
     __root.tsx        # Root layout (HTML shell, providers)
-    index.tsx         # Home page (composes Layout + SwapWidget)
+    index.tsx         # Home page (composes Layout + ReceiveWidget)
   components/
     Layout.tsx        # App shell (nav, footer, appkit-button)
-    swap-widget.tsx   # TokenFlight Swap web component wrapper
+    receive-widget.tsx # TokenFlight Receive web component wrapper
     providers.tsx     # WagmiProvider + QueryClientProvider
     ThemeToggle.tsx   # Light/dark theme toggle
-    LocaleSelect.tsx  # Locale selector for swap widget
+    LocaleSelect.tsx  # Locale selector for receive widget
   lib/
     wagmi.ts          # wagmi + AppKit configuration
   styles/

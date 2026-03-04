@@ -1,6 +1,6 @@
-# TokenFlight Swap - Next.js + RainbowKit
+# TokenFlight Receive - Next.js + RainbowKit
 
-Cross-chain token swap widget powered by TokenFlight, built with Next.js 16, RainbowKit, and wagmi.
+Intent-based trading widget powered by TokenFlight, built with Next.js 16, RainbowKit, and wagmi.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/tvl-labs/tokenflight-embed-examples/tree/main/next-rainbowkit)
 
@@ -18,8 +18,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ```
 app/
   layout.tsx              # Root layout (fonts + Providers)
-  page.tsx                # Page entry point (Layout + SwapWidget)
-  swap-widget.tsx         # Core TokenFlight integration
+  page.tsx                # Page entry point (Layout + ReceiveWidget)
+  receive-widget.tsx      # Core TokenFlight integration
   providers.tsx           # RainbowKit + wagmi providers
   globals.css             # Global styles & theme variables
   components/
@@ -33,18 +33,18 @@ app/
 
 ## Core Integration
 
-The swap widget integration lives in [app/swap-widget.tsx](app/swap-widget.tsx). It handles:
+The receive widget integration lives in [app/receive-widget.tsx](app/receive-widget.tsx). It handles:
 
-- Dynamic import of `@tokenflight/swap` and `@tokenflight/adapter-wagmi`
+- Dynamic import of `@tokenflight/embed` and `@tokenflight/adapter-wagmi`
 - One-time registration of custom elements via `registerElements()`
 - Wiring the wagmi config through `WagmiWalletAdapter`
-- Rendering the `<tokenflight-swap>` web component with theme and locale props
+- Rendering the `<tokenflight-receive>` web component with theme and locale props
 
 ## Tech Stack
 
 - [Next.js 16](https://nextjs.org/) (App Router)
 - [RainbowKit v2](https://www.rainbowkit.com/) + [wagmi v3](https://wagmi.sh/) + [viem](https://viem.sh/)
-- [TokenFlight Swap](https://tokenflight.xyz/) + wagmi adapter
+- [TokenFlight Receive](https://tokenflight.xyz/) + wagmi adapter
 - [TailwindCSS v4](https://tailwindcss.com/)
 - [TypeScript](https://www.typescriptlang.org/) (strict mode)
 

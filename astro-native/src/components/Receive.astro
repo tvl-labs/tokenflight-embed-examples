@@ -1,5 +1,5 @@
 <div class="w-full max-w-120 flex justify-center items-center">
-  <tokenflight-swap theme="dark" id="swap-widget" />
+  <tokenflight-receive theme="dark" id="receive-widget" />
 </div>
 
 <script>
@@ -15,7 +15,7 @@
     solana,
   } from "@reown/appkit/networks";
   import { VersionedTransaction } from "@solana/web3.js";
-  import { registerElements } from "@tokenflight/swap";
+  import { registerElements } from "@tokenflight/embed";
   import { AppKitWalletAdapter } from "@tokenflight/adapter-appkit";
   import type { AppKitNetwork } from "@reown/appkit/networks";
 
@@ -41,8 +41,8 @@
     defaultNetwork: mainnet,
     projectId,
     metadata: {
-      name: "Swap",
-      description: "Cross-chain token swaps powered by Khalani",
+      name: "Receive",
+      description: "Intent-based trading powered by TokenFlight",
       url: window.location.origin,
       icons: ["https://khalani.network/favicon.ico"],
     },
@@ -75,6 +75,6 @@
 
   document.getElementById("locale-select")!.addEventListener("change", (e) => {
     const locale = (e.target as HTMLSelectElement).value;
-    document.getElementById("swap-widget")?.setAttribute("locale", locale);
+    document.getElementById("receive-widget")?.setAttribute("locale", locale);
   });
 </script>

@@ -13,7 +13,7 @@ function onChange(e: Event) {
   const target = e.target;
   if (!(target instanceof HTMLSelectElement)) return;
 
-  // Dispatch event for Swap component to pick up the locale change
+  // Dispatch event for Receive component to pick up the locale change
   window.dispatchEvent(new CustomEvent('locale-change', { detail: { locale: target.value } }));
 }
 </script>

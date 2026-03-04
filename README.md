@@ -1,6 +1,6 @@
-# TokenFlight Swap — Integration Examples
+# TokenFlight Receive — Integration Examples
 
-Production-grade examples for integrating the [TokenFlight Swap](https://embed.tokenflight.ai) cross-chain swap widget across different frontend stacks.
+Production-grade examples for integrating the [TokenFlight Receive](https://embed.tokenflight.ai) intent-based trading widget across different frontend stacks.
 
 Each example is a **fully standalone project** — copy any directory, install dependencies, and deploy.
 
@@ -16,12 +16,12 @@ Each example is a **fully standalone project** — copy any directory, install d
 
 ## How It Works
 
-TokenFlight Swap is a **Web Component** built with Shadow DOM encapsulation. It works with any framework.
+TokenFlight Receive is a **Web Component** built with Shadow DOM encapsulation. It works with any framework.
 
 Register the web component once, then use it anywhere in your HTML:
 
 ```ts
-import { registerElements } from '@tokenflight/swap';
+import { registerElements } from '@tokenflight/embed';
 import { AppKitWalletAdapter } from '@tokenflight/adapter-appkit';
 
 registerElements({
@@ -30,7 +30,7 @@ registerElements({
 ```
 
 ```html
-<tokenflight-swap theme="dark" locale="en"></tokenflight-swap>
+<tokenflight-receive theme="dark" locale="en"></tokenflight-receive>
 ```
 
 ### Wallet Adapters
@@ -58,8 +58,8 @@ No API key is required. The widget connects to the Hyperstream API with public r
 Each example is self-contained. To use one in your own project:
 
 ```bash
-cp -r next-rainbowkit my-swap-app
-cd my-swap-app
+cp -r next-rainbowkit my-receive-app
+cd my-receive-app
 npm install
 npm run dev
 ```
