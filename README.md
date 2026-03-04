@@ -30,7 +30,12 @@ registerElements({
 ```
 
 ```html
-<tokenflight-receive theme="dark" locale="en"></tokenflight-receive>
+<tokenflight-receive
+  target='{"chainId":8453,"address":"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"}'
+  amount="1"
+  theme="dark"
+  locale="en"
+></tokenflight-receive>
 ```
 
 ### Wallet Adapters

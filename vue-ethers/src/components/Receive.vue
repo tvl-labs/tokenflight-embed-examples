@@ -82,6 +82,8 @@ onUnmounted(() => {
     <tokenflight-receive
       id="receive-widget"
       :theme="getInitialTheme()"
+      target='{"chainId":8453,"address":"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"}'
+      amount="1"
       style="display: block; width: 100%"
     />
   </div>
