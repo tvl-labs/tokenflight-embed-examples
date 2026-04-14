@@ -23,8 +23,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 Start here to understand how TokenFlight Receive is wired up:
 
-- [`components/Receive.vue`](components/Receive.vue) -- Receive widget component (renders `<tokenflight-receive>`, syncs theme and locale)
-- [`plugins/appkit.client.ts`](plugins/appkit.client.ts) -- AppKit + `registerElements()` initialization (client-only)
+- [`components/Receive.vue`](components/Receive.vue) -- Receive widget component (renders `<tokenflight-widget>` in EXACT_OUTPUT mode, syncs theme and locale)
+- [`plugins/appkit.client.ts`](plugins/appkit.client.ts) -- AppKit + `registerWidgetElement()` initialization (client-only)
 
 ## Tech Stack
 
@@ -63,9 +63,9 @@ nuxt-appkit/
 
 ## How It Works
 
-1. **AppKit Plugin** (`plugins/appkit.client.ts`) -- Initializes Reown AppKit with Wagmi and Solana adapters, configured for Ethereum mainnet, Base, Arbitrum, Optimism, Polygon, and Solana. Calls `registerElements()` to make the `<tokenflight-receive>` web component available. Runs only on the client side.
+1. **AppKit Plugin** (`plugins/appkit.client.ts`) -- Initializes Reown AppKit with Wagmi and Solana adapters, configured for Ethereum mainnet, Base, Arbitrum, Optimism, Polygon, and Solana. Calls `registerWidgetElement()` to make the `<tokenflight-widget>` web component available. Runs only on the client side.
 
-2. **Receive Component** (`components/Receive.vue`) -- Renders the `<tokenflight-receive>` web component and listens for `theme-change` and `locale-change` custom events to keep the widget attributes in sync with the UI.
+2. **Receive Component** (`components/Receive.vue`) -- Renders the `<tokenflight-widget>` web component (configured as EXACT_OUTPUT receive flow) and listens for `theme-change` and `locale-change` custom events to keep the widget attributes in sync with the UI.
 
 3. **Layout** (`layouts/default.vue`) -- Provides the navigation bar with `<appkit-button />` for wallet connection, `ThemeToggle`, `LocaleSelect`, and a footer.
 

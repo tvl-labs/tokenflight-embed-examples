@@ -4,7 +4,7 @@ import { SolanaAdapter } from '@reown/appkit-adapter-solana';
 import { mainnet, base, arbitrum, optimism, polygon, solana } from '@reown/appkit/networks';
 import type { AppKitNetwork } from '@reown/appkit/networks';
 import { VersionedTransaction } from '@solana/web3.js';
-import { registerElements } from '@tokenflight/swap';
+import { registerWidgetElement } from '@tokenflight/swap/widget';
 import { AppKitWalletAdapter } from '@tokenflight/adapter-appkit';
 
 export default defineNuxtPlugin(() => {
@@ -43,11 +43,11 @@ export default defineNuxtPlugin(() => {
     appkit.setThemeMode(theme as 'dark' | 'light');
   });
 
-  // Register TokenFlight custom elements with Solana support
+  // Register TokenFlight widget custom element with Solana support
   const walletAdapter = new AppKitWalletAdapter(appkit, {
     VersionedTransaction,
   });
-  registerElements({
+  registerWidgetElement({
     walletAdapter,
     customColors: {
       '--tf-font-family': "'Inter', sans-serif",

@@ -5,7 +5,8 @@
  * This component is the single reference for integrating TokenFlight Receive
  * with Vue 3 + ethers.js. It handles:
  *
- *  1. Registering the <tokenflight-receive> web component via `registerElements()`
+ *  1. Registering the <tokenflight-widget> web component via `registerWidgetElement()`
+ *     (configured as an EXACT_OUTPUT receive flow via trade-type + to-token + amount)
  *  2. Creating an `EthersWalletAdapter` from `window.ethereum`
  *  3. Listening for theme/locale changes and forwarding them to the widget
  *
@@ -53,13 +54,13 @@ onMounted(async () => {
 
   try {
     // Dynamically import TokenFlight packages
-    const [{ registerElements }, { EthersWalletAdapter }] = await Promise.all([
-      import('@tokenflight/swap'),
+    const [{ registerWidgetElement }, { EthersWalletAdapter }] = await Promise.all([
+      import('@tokenflight/swap/widget'),
       import('@tokenflight/adapter-ethers'),
     ]);
 
-    // Register the <tokenflight-receive> custom element with ethers adapter
-    registerElements({
+    // Register the <tokenflight-widget> custom element with ethers adapter
+    registerWidgetElement({
       walletAdapter: new EthersWalletAdapter(window.ethereum),
       customColors: {
         '--tf-font-family': "'Inter', sans-serif",
@@ -79,10 +80,11 @@ onUnmounted(() => {
 
 <template>
   <div class="w-full max-w-120 flex justify-center items-center">
-    <tokenflight-receive
+    <tokenflight-widget
       id="receive-widget"
       :theme="getInitialTheme()"
-      target='{"chainId":8453,"address":"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"}'
+      trade-type="EXACT_OUTPUT"
+      to-token='{"chainId":8453,"address":"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"}'
       amount="1"
       style="display: block; width: 100%"
     />

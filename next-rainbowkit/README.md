@@ -35,10 +35,10 @@ app/
 
 The receive widget integration lives in [app/receive-widget.tsx](app/receive-widget.tsx). It handles:
 
-- Dynamic import of `@tokenflight/swap` and `@tokenflight/adapter-wagmi`
-- One-time registration of custom elements via `registerElements()`
+- Dynamic import of `@tokenflight/swap/widget` and `@tokenflight/adapter-wagmi`
+- One-time registration of the widget custom element via `registerWidgetElement()`
 - Wiring the wagmi config through `WagmiWalletAdapter`
-- Rendering the `<tokenflight-receive>` web component with theme and locale props
+- Rendering the `<tokenflight-widget>` web component (EXACT_OUTPUT receive flow) with theme and locale props
 
 ## Tech Stack
 

@@ -31,7 +31,7 @@ Open [http://localhost:4321](http://localhost:4321) in your browser.
 - **TailwindCSS v4** -- utility-first styling via Vite plugin
 - **Reown AppKit** -- wallet connection (Web Component: `<appkit-button />`)
 - **wagmi/core** -- vanilla JS chain/wallet configuration (no React hooks)
-- **TokenFlight Receive** -- intent-based trading widget (Web Component: `<tokenflight-receive />`)
+- **TokenFlight Receive** -- intent-based trading widget (Web Component: `<tokenflight-widget />` in EXACT_OUTPUT mode)
 - **TypeScript** -- strict mode
 
 ## Core Integration
@@ -44,17 +44,17 @@ This is the file to look at to understand how to integrate TokenFlight Receive i
 
 ## How It Works
 
-This example uses `registerElements()` to register the `<tokenflight-receive>` web component:
+This example uses `registerWidgetElement()` to register the `<tokenflight-widget>` web component:
 
 ```ts
-import { registerElements } from '@tokenflight/swap';
+import { registerWidgetElement } from '@tokenflight/swap/widget';
 import { AppKitWalletAdapter } from '@tokenflight/adapter-appkit';
 
 const walletAdapter = new AppKitWalletAdapter(appkit, {
   VersionedTransaction,
 });
 
-registerElements({
+registerWidgetElement({
   walletAdapter,
   customColors: {
     '--tf-font-family': "'Inter', sans-serif",
@@ -63,7 +63,7 @@ registerElements({
 });
 ```
 
-Once registered, drop `<tokenflight-receive theme="dark" />` anywhere in your HTML. The widget handles chain selection, token picking, and trade execution. Locale can be set via the `locale` attribute (e.g. `locale="zh-CN"`).
+Once registered, drop `<tokenflight-widget trade-type="EXACT_OUTPUT" to-token="..." amount="..." theme="dark" />` anywhere in your HTML. The widget handles chain selection, token picking, and trade execution. Locale can be set via the `locale` attribute (e.g. `locale="zh-CN"`).
 
 All client-side code lives in a single Astro `<script>` tag inside the Receive component, which Vite bundles as an ES module. No React, Vue, or Svelte islands are needed.
 

@@ -36,11 +36,11 @@ importers:
         specifier: ^1.163.3
         version: 1.163.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(vite@7.3.1(@types/node@25.3.2)(jiti@2.6.1)(lightningcss@1.31.1)(tsx@4.21.0))
       '@tokenflight/adapter-appkit':
-        specifier: 0.0.3
-        version: 0.0.3(@reown/appkit@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))
+        specifier: 0.2.0
+        version: 0.2.0(@reown/appkit-adapter-solana@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))(@reown/appkit-adapter-wagmi@1.8.18(f1d643d1d955cd8c37d468f107db6c3a))(@reown/appkit@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))
       '@tokenflight/swap':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.2.0
+        version: 0.2.0
       react:
         specifier: ^19.2.4
         version: 19.2.4
@@ -1471,16 +1471,25 @@ packages:
     resolution: {integrity: sha512-42WoRePf8v690qG8yGRe/YOh+oHni9vUaUUfoqlS91U2scd3a5rkLtVsc6b7z60w3RogH0I00vdrC5AaeiZ18w==}
     engines: {node: '>=20.19'}
 
-  '@tokenflight/adapter-appkit@0.0.3':
-    resolution: {integrity: sha512-H3R/j6V4RpLs8XexgpIFlXNK4TV+jIRrNMCfLmyoXbub2lO1CXQCpnVCajZzri47VODIoPdbAyDKd/KfOBQvxQ==}
+  '@tokenflight/adapter-appkit@0.2.0':
+    resolution: {integrity: sha512-tKGpzbDNXKAaSX72KVUarYhs/HJ6Ww6AA7Zdm2ze7F7tMc1p2h1RhzhrJ4k5R7CU9eaguy8bEsClBXQZjsXdEQ==}
     peerDependencies:
       '@reown/appkit': '>=1.8.0'
+      '@reown/appkit-adapter-solana': '>=1.8.0'
+      '@reown/appkit-adapter-wagmi': '>=1.8.0'
     peerDependenciesMeta:
       '@reown/appkit':
         optional: true
+      '@reown/appkit-adapter-solana':
+        optional: true
+      '@reown/appkit-adapter-wagmi':
+        optional: true
 
-  '@tokenflight/swap@0.0.3':
-    resolution: {integrity: sha512-8/BRvndwZXrGkTr9Q8L/gJMgkeJtyBW6d/wnizRe5nLAdP6Hf1bdiu0J/L9pMnz1VpzFVfUTm1lBlE9Fs2SmZw==}
+  '@tokenflight/api@0.2.0':
+    resolution: {integrity: sha512-aqihCJ+2WSNF8soWeoZLIRXlXas2wJJuYZ4uXa/NL8HYrHiilPN1uk91iplonYoBFQ3UcyLhhhYFii8mB4pX5w==}
+
+  '@tokenflight/swap@0.2.0':
+    resolution: {integrity: sha512-IgOBBHPZZWNtjoI4WtaJt/FcukbINYW/49swXxqJAmLFzZ78WEkTzKTIM8eA60EoFCfpGzXd27kZ5wGDE83Bqw==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -2487,6 +2496,10 @@ packages:
 
   keyvaluestorage-interface@1.0.0:
     resolution: {integrity: sha512-8t6Q3TclQ4uZynJY9IGr2+SsIGwK9JHcO6ootkHCGA0CrQCRy+VkouYNO2xicET6b9al7QKzpebNow+gkpCL8g==}
+
+  ky@1.14.3:
+    resolution: {integrity: sha512-9zy9lkjac+TR1c2tG+mkNSVlyOpInnWdSMiue4F+kq8TwJSgv6o8jhLRg8Ho6SnZ9wOYUq/yozts9qQCfk7bIw==}
+    engines: {node: '>=18'}
 
   lightningcss-android-arm64@1.31.1:
     resolution: {integrity: sha512-HXJF3x8w9nQ4jbXRiNppBCqeZPIAfUo8zE/kOEGbW5NZvGc/K7nMxbhIr+YlFlHW5mpbg/YFPdbnCh1wAXCKFg==}
@@ -5799,13 +5812,21 @@ snapshots:
 
   '@tanstack/virtual-file-routes@1.161.4': {}
 
-  '@tokenflight/adapter-appkit@0.0.3(@reown/appkit@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))':
+  '@tokenflight/adapter-appkit@0.2.0(@reown/appkit-adapter-solana@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))(@reown/appkit-adapter-wagmi@1.8.18(f1d643d1d955cd8c37d468f107db6c3a))(@reown/appkit@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))':
     dependencies:
-      '@tokenflight/swap': 0.0.3
+      '@tokenflight/swap': 0.2.0
     optionalDependencies:
       '@reown/appkit': 1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@reown/appkit-adapter-solana': 1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(fastestsmallesttextencoderdecoder@1.0.22)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@reown/appkit-adapter-wagmi': 1.8.18(f1d643d1d955cd8c37d468f107db6c3a)
 
-  '@tokenflight/swap@0.0.3': {}
+  '@tokenflight/api@0.2.0':
+    dependencies:
+      ky: 1.14.3
+
+  '@tokenflight/swap@0.2.0':
+    dependencies:
+      '@tokenflight/api': 0.2.0
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -7478,6 +7499,8 @@ snapshots:
       readable-stream: 3.6.2
 
   keyvaluestorage-interface@1.0.0: {}
+
+  ky@1.14.3: {}
 
   lightningcss-android-arm64@1.31.1:
     optional: true

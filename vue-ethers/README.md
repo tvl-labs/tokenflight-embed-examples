@@ -19,8 +19,8 @@ Open [http://localhost:5173](http://localhost:5173) in a browser with a wallet e
 
 **[src/components/Receive.vue](src/components/Receive.vue)** is the single file you need to understand the full TokenFlight Receive integration. It contains:
 
-- `registerElements()` initialization with `EthersWalletAdapter`
-- The `<tokenflight-receive>` web component
+- `registerWidgetElement()` initialization with `EthersWalletAdapter`
+- The `<tokenflight-widget>` web component (EXACT_OUTPUT receive flow)
 - Theme and locale event forwarding
 
 Start here if you want to integrate TokenFlight Receive into your own Vue app.
@@ -40,7 +40,7 @@ Start here if you want to integrate TokenFlight Receive into your own Vue app.
 ```
 src/
   components/
-    Receive.vue         # Core integration — registerElements + <tokenflight-receive>
+    Receive.vue         # Core integration — registerWidgetElement + <tokenflight-widget>
     Layout.vue          # App shell (nav, error banners, footer, slot)
     WalletButton.vue    # Wallet connect/disconnect button
     ThemeToggle.vue     # Dark/light theme toggle
@@ -58,8 +58,8 @@ src/
 ## How It Works
 
 1. **Wallet Detection** - Checks for `window.ethereum` (injected by MetaMask or similar)
-2. **Element Registration** - Dynamically imports `@tokenflight/swap` and `@tokenflight/adapter-ethers`, then calls `registerElements()` with an `EthersWalletAdapter` to define the `<tokenflight-receive>` custom element
-3. **Rendering** - Places `<tokenflight-receive>` in the template as a standard HTML element with `theme` and `locale` attributes
+2. **Element Registration** - Dynamically imports `@tokenflight/swap/widget` and `@tokenflight/adapter-ethers`, then calls `registerWidgetElement()` with an `EthersWalletAdapter` to define the `<tokenflight-widget>` custom element
+3. **Rendering** - Places `<tokenflight-widget trade-type="EXACT_OUTPUT" to-token=... amount=...>` in the template as a standard HTML element with `theme` and `locale` attributes
 4. **Live Updates** - Listens for `theme-change` and `locale-change` custom events and forwards them to the widget via attribute changes
 
 ## Deployment

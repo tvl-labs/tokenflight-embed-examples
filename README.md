@@ -21,21 +21,22 @@ TokenFlight Receive is a **Web Component** built with Shadow DOM encapsulation. 
 Register the web component once, then use it anywhere in your HTML:
 
 ```ts
-import { registerElements } from '@tokenflight/swap';
+import { registerWidgetElement } from '@tokenflight/swap/widget';
 import { AppKitWalletAdapter } from '@tokenflight/adapter-appkit';
 
-registerElements({
+registerWidgetElement({
   walletAdapter: new AppKitWalletAdapter(appkit, { VersionedTransaction }),
 });
 ```
 
 ```html
-<tokenflight-receive
-  target='{"chainId":8453,"address":"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"}'
+<tokenflight-widget
+  trade-type="EXACT_OUTPUT"
+  to-token='{"chainId":8453,"address":"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"}'
   amount="1"
   theme="dark"
-  locale="en"
-></tokenflight-receive>
+  locale="en-US"
+></tokenflight-widget>
 ```
 
 ### Wallet Adapters

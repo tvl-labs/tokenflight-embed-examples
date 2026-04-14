@@ -27,11 +27,11 @@ importers:
         specifier: ^1.98.4
         version: 1.98.4(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)
       '@tokenflight/adapter-appkit':
-        specifier: 0.0.3
-        version: 0.0.3(@reown/appkit@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(db0@0.3.4)(fastestsmallesttextencoderdecoder@1.0.22)(ioredis@5.10.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@3.25.76))
+        specifier: 0.2.0
+        version: 0.2.0(@reown/appkit-adapter-solana@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(db0@0.3.4)(fastestsmallesttextencoderdecoder@1.0.22)(ioredis@5.10.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@3.25.76))(@reown/appkit-adapter-wagmi@1.8.18(60cd953462f7cdc7e49004296c2152dd))(@reown/appkit@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(db0@0.3.4)(fastestsmallesttextencoderdecoder@1.0.22)(ioredis@5.10.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@3.25.76))
       '@tokenflight/swap':
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.2.0
+        version: 0.2.0
       nuxt:
         specifier: ^4.3.1
         version: 4.3.1(@parcel/watcher@2.5.6)(@types/node@25.3.2)(@vue/compiler-sfc@3.5.29)(bufferutil@4.1.0)(cac@6.7.14)(db0@0.3.4)(idb-keyval@6.2.2)(ioredis@5.10.0)(lightningcss@1.31.1)(magicast@0.5.2)(rollup@4.59.0)(terser@5.46.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(vite@7.3.1(@types/node@25.3.2)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.46.0)(yaml@2.8.2))(yaml@2.8.2)
@@ -1857,16 +1857,25 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@tokenflight/adapter-appkit@0.0.3':
-    resolution: {integrity: sha512-H3R/j6V4RpLs8XexgpIFlXNK4TV+jIRrNMCfLmyoXbub2lO1CXQCpnVCajZzri47VODIoPdbAyDKd/KfOBQvxQ==}
+  '@tokenflight/adapter-appkit@0.2.0':
+    resolution: {integrity: sha512-tKGpzbDNXKAaSX72KVUarYhs/HJ6Ww6AA7Zdm2ze7F7tMc1p2h1RhzhrJ4k5R7CU9eaguy8bEsClBXQZjsXdEQ==}
     peerDependencies:
       '@reown/appkit': '>=1.8.0'
+      '@reown/appkit-adapter-solana': '>=1.8.0'
+      '@reown/appkit-adapter-wagmi': '>=1.8.0'
     peerDependenciesMeta:
       '@reown/appkit':
         optional: true
+      '@reown/appkit-adapter-solana':
+        optional: true
+      '@reown/appkit-adapter-wagmi':
+        optional: true
 
-  '@tokenflight/swap@0.0.3':
-    resolution: {integrity: sha512-8/BRvndwZXrGkTr9Q8L/gJMgkeJtyBW6d/wnizRe5nLAdP6Hf1bdiu0J/L9pMnz1VpzFVfUTm1lBlE9Fs2SmZw==}
+  '@tokenflight/api@0.2.0':
+    resolution: {integrity: sha512-aqihCJ+2WSNF8soWeoZLIRXlXas2wJJuYZ4uXa/NL8HYrHiilPN1uk91iplonYoBFQ3UcyLhhhYFii8mB4pX5w==}
+
+  '@tokenflight/swap@0.2.0':
+    resolution: {integrity: sha512-IgOBBHPZZWNtjoI4WtaJt/FcukbINYW/49swXxqJAmLFzZ78WEkTzKTIM8eA60EoFCfpGzXd27kZ5wGDE83Bqw==}
 
   '@tybys/wasm-util@0.10.1':
     resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
@@ -3193,6 +3202,10 @@ packages:
 
   knitwork@1.3.0:
     resolution: {integrity: sha512-4LqMNoONzR43B1W0ek0fhXMsDNW/zxa1NdFAVMY+k28pgZLovR4G3PB5MrpTxCy1QaZCqNoiaKPr5w5qZHfSNw==}
+
+  ky@1.14.3:
+    resolution: {integrity: sha512-9zy9lkjac+TR1c2tG+mkNSVlyOpInnWdSMiue4F+kq8TwJSgv6o8jhLRg8Ho6SnZ9wOYUq/yozts9qQCfk7bIw==}
+    engines: {node: '>=18'}
 
   launch-editor@2.13.1:
     resolution: {integrity: sha512-lPSddlAAluRKJ7/cjRFoXUFzaX7q/YKI7yPHuEvSJVqoXvFnJov1/Ud87Aa4zULIbA9Nja4mSPK8l0z/7eV2wA==}
@@ -7071,13 +7084,21 @@ snapshots:
       '@tanstack/query-core': 5.90.20
       react: 19.2.4
 
-  '@tokenflight/adapter-appkit@0.0.3(@reown/appkit@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(db0@0.3.4)(fastestsmallesttextencoderdecoder@1.0.22)(ioredis@5.10.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@3.25.76))':
+  '@tokenflight/adapter-appkit@0.2.0(@reown/appkit-adapter-solana@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(db0@0.3.4)(fastestsmallesttextencoderdecoder@1.0.22)(ioredis@5.10.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@3.25.76))(@reown/appkit-adapter-wagmi@1.8.18(60cd953462f7cdc7e49004296c2152dd))(@reown/appkit@1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(db0@0.3.4)(fastestsmallesttextencoderdecoder@1.0.22)(ioredis@5.10.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@3.25.76))':
     dependencies:
-      '@tokenflight/swap': 0.0.3
+      '@tokenflight/swap': 0.2.0
     optionalDependencies:
       '@reown/appkit': 1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(db0@0.3.4)(fastestsmallesttextencoderdecoder@1.0.22)(ioredis@5.10.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@3.25.76)
+      '@reown/appkit-adapter-solana': 1.8.18(@types/react@19.2.14)(bufferutil@4.1.0)(db0@0.3.4)(fastestsmallesttextencoderdecoder@1.0.22)(ioredis@5.10.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@3.25.76)
+      '@reown/appkit-adapter-wagmi': 1.8.18(60cd953462f7cdc7e49004296c2152dd)
 
-  '@tokenflight/swap@0.0.3': {}
+  '@tokenflight/api@0.2.0':
+    dependencies:
+      ky: 1.14.3
+
+  '@tokenflight/swap@0.2.0':
+    dependencies:
+      '@tokenflight/api': 0.2.0
 
   '@tybys/wasm-util@0.10.1':
     dependencies:
@@ -8657,6 +8678,8 @@ snapshots:
   klona@2.0.6: {}
 
   knitwork@1.3.0: {}
+
+  ky@1.14.3: {}
 
   launch-editor@2.13.1:
     dependencies:

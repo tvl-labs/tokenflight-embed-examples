@@ -16,10 +16,10 @@
     "@reown/appkit-adapter-solana": "^1.8.18",
     "@reown/appkit-adapter-wagmi": "^1.8.18",
     "@solana/web3.js": "^1.98.4",
-    "@tokenflight/adapter-appkit": "0.0.3",
+    "@tokenflight/adapter-appkit": "0.2.0",
     "@fontsource/inter": "^5.2.8",
     "@fontsource/jetbrains-mono": "^5.2.8",
-    "@tokenflight/swap": "0.0.3",
+    "@tokenflight/swap": "0.2.0",
     "nuxt": "^4.3.1",
     "viem": "^2.46.3",
     "vue": "^3.5.29"

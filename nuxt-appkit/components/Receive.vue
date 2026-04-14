@@ -1,13 +1,14 @@
 <!--
   Core Integration: Receive Widget Component
   ========================================
-  Renders the <tokenflight-receive> web component and keeps its attributes
+  Renders the <tokenflight-widget> web component (configured as EXACT_OUTPUT
+  receive flow via trade-type + to-token + amount) and keeps its attributes
   in sync with the rest of the UI via custom events:
     - "theme-change"  (dispatched by ThemeToggle)
     - "locale-change" (dispatched by LocaleSelect)
 
   The web component is registered globally in plugins/appkit.client.ts
-  via registerElements(), so it is available by the time this component mounts.
+  via registerWidgetElement(), so it is available by the time this mounts.
 -->
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue';
@@ -53,10 +54,11 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <tokenflight-receive
+  <tokenflight-widget
     id="receive-widget"
     :theme="getInitialTheme()"
-    target='{"chainId":8453,"address":"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"}'
+    trade-type="EXACT_OUTPUT"
+    to-token='{"chainId":8453,"address":"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"}'
     amount="1"
     style="display: block; width: 100%"
   />

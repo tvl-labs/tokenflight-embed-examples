@@ -1,8 +1,9 @@
 <div class="w-full max-w-120 flex justify-center items-center">
-  <tokenflight-receive
+  <tokenflight-widget
     theme="dark"
     id="receive-widget"
-    target='{"chainId":8453,"address":"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"}'
+    trade-type="EXACT_OUTPUT"
+    to-token='{"chainId":8453,"address":"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"}'
     amount="1"
   />
 </div>
@@ -20,7 +21,7 @@
     solana,
   } from "@reown/appkit/networks";
   import { VersionedTransaction } from "@solana/web3.js";
-  import { registerElements } from "@tokenflight/swap";
+  import { registerWidgetElement } from "@tokenflight/swap/widget";
   import { AppKitWalletAdapter } from "@tokenflight/adapter-appkit";
   import type { AppKitNetwork } from "@reown/appkit/networks";
 
@@ -68,7 +69,7 @@
   const walletAdapter = new AppKitWalletAdapter(appkit, {
     VersionedTransaction,
   });
-  registerElements({
+  registerWidgetElement({
     walletAdapter,
     customColors: {
       "--tf-font-family": "'Inter', sans-serif",
